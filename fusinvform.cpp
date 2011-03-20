@@ -20,24 +20,25 @@ FusInvForm::~FusInvForm()
     delete ui;
 }
 
+
 void FusInvForm::setMsg(QString msg) {
     ui->textEdit->setText(msg);
-
 }
 
 void FusInvForm::setTitle(QString title) {
     this->setWindowTitle(title);
 }
 
-void FusInvForm::on_buttonBox_accepted()
-{
-    std::cout<<"ok"<<std::endl;
-    QApplication::exit(0);
-}
 
-void FusInvForm::on_buttonBox_rejected()
+void FusInvForm::on_pushCancel_pressed()
 {
     std::cout<<"cancel"<<std::endl;
 
+    QApplication::exit(0);
+}
+
+void FusInvForm::on_pushOk_pressed()
+{
+    std::cout<<"ok"<<std::endl;
     QApplication::exit(0);
 }
